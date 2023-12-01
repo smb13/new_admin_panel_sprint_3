@@ -1,8 +1,9 @@
-from pydantic import BaseSettings, Field
+from pydantic import Field
+from pydantic_settings import BaseSettings
 
 
 class DatabaseSettings(BaseSettings):
-    dbname: str = Field(..., env='POSTGRES_DB')
+    dbname: str = Field(..., alias='db')
     user: str = ...
     password: str = ...
     host: str = ...

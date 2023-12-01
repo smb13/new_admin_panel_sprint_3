@@ -24,8 +24,6 @@ services:
     volumes:
       - source_db_data:/var/lib/postgresql/data/
       - ./dump/init.sql:/docker-entrypoint-initdb.d/init.sql
-    ports:
-      - "5432:5432"
 
   elasticsearch:
     image: elasticsearch:8.6.2

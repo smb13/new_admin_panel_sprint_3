@@ -1,5 +1,5 @@
 import uuid
-from typing import Any, List, Optional
+from typing import Any
 from datetime import datetime
 
 from pydantic import BaseModel
@@ -31,13 +31,13 @@ class Person(BaseModel):
 
 class Movie(BaseModel):
     id: uuid.UUID
-    imdb_rating: Optional[float]
-    genre: List[str] = []
+    imdb_rating: float | None
+    genre: list[str] = []
     title: str
-    description: Optional[str]
-    director: List[str] = []
-    actors_names: List[str] = []
-    writers_names: List[str] = []
-    actors: List[Person] = []
-    writers: List[Person] = []
+    description: str | None
+    director: list[str] = []
+    actors_names: list[str] = []
+    writers_names: list[str] = []
+    actors: list[Person] = []
+    writers: list[Person] = []
     modified: datetime = Field(..., exclude=True)
